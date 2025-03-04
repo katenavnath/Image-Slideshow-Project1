@@ -1,0 +1,633 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a{
+    text-decoration: none;
+}
+header{
+    width: 100%;
+    height: 55px;
+    padding: 16px 88px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.685);
+    background-color: #00000089;
+    z-index: 1000;
+}
+header .logo{
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header .logo img{
+    height: 44px;
+    padding-bottom: 4px;
+}
+header a{
+    color: #14ff72cb;
+    font-size: 28px;
+    margin-left: 12px;
+    font-weight: 700;
+    text-shadow: 3px 4px 4px rgb(4, 0, 15);
+}
+header nav a{
+    color: white;
+    text-shadow: 3px 4px 4px rgb(4, 0, 15);
+    padding: 8px 0px 4px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: 0.3s;
+    margin-right: 18px;
+}
+a.actives{
+    color: #14ff72cb;
+    border-bottom: 2px solid #14ff72cb;
+}
+header .login{
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #14ff72cb;
+    border-radius: 5px;
+    padding: 8px 12px;
+}
+  /* carouse;  */
+ .carousel{
+        width: 100vw;
+        height: 100vh;
+        margin-top: -55px;
+        overflow: hidden;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+ }
+ .carousel .list .item{
+    width: 170px;
+    height: 240px;
+    position: absolute;
+    top: 80%;
+    transform: translateY(-70%);
+    left: 70%;
+    border-radius: 17px;
+    box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.3);
+    background-position: 50% 50%;
+    background-size: cover;
+    z-index: 99;
+    transition: 1.5s;
+ }
+ .carousel .list .item:nth-child(1),
+ .carousel .list .item:nth-child(2){
+    top: 0;
+    left: 0;
+    transform: translate(0 0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+ }
+ .carousel .list:nth-child(3){
+    left: 67%;
+ }
+ .carousel .list:nth-child(4){
+    left: calc(67% + 200px);
+ }
+ .carousel .list:nth-child(5){
+    left: calc(67% + 400px);
+ }
+ .carousel .list:nth-child(6){
+    left: calc(67% + 600px);
+ }
+ .carousel .list:nth-child(n+7){
+    left: calc(67% + 800px);
+ }
+ .list .item .content{
+    position: absolute;
+    top: 50%;
+    left:100px;
+    width: 440px;
+    transform: translateY(-50%);
+    text-align: left;
+    display: none;
+    color: white;
+ }
+ .list .item:nth-child(2) .content{
+    display: block;
+ }
+ .content .title{
+    font-size: 100px;
+    text-transform: uppercase;
+   color: #14ff72cb;
+   font-weight: bold;
+   line-height: 1;
+   text-shadow: 3px 4px 4px rgb(4, 0, 15);
+   opacity: 0;
+   animation: animate 1s ease-in-out 0.3s forwards;
+ }
+ .content .name{
+   font-size: 100px;
+   text-transform: uppercase;
+   font-weight: bold;
+   line-height: 1;
+   margin-top:12px;
+   text-shadow: 3px 4px 4px rgb(4, 0, 15);
+   opacity: 0;
+   animation: animate 1s ease-in-out 0.6s forwards;
+ }
+ .content .des{
+   font-size: 18px;
+   margin: 12px 0px 20px 5px;
+   line-height: 1.6;
+   text-shadow: 3px 4px 4px rgb(4, 0, 15);
+   opacity: 0;
+   animation: animate 1s ease-in-out 0.9s forwards;
+ }
+ .content .btn{
+   margin: 10px 20px;
+   opacity: 0;
+   animation: animate 1s ease-in-out 1.2s forwards;
+ }
+ .content .btn button{
+   padding: 10px 20px;
+   border: none;
+   cursor: pointer;
+   font-size: 17px;
+   border: 2px solid white;
+   border-radius: 5px;
+ }
+ .content .btn button:nth-child(1){
+   margin-right: 15px;
+ }
+ .content .btn button:nth-child(2){
+   background: transparent;
+   color: #14ff72cb;
+   border: 2px solid #14ff72cb;
+   transition: 0.3s;
+ }
+ .content .btn button:nth-child(1):hover{
+   background-color: #14ff72cb;
+   color: white;
+   border-color: #14ff72cb;
+ }
+ @keyframes animate{
+   from{
+      opacity: 0;
+      transform: translate(0,100px);
+      filter: blur(33px);
+   }
+   to{
+      opacity: 1;
+      transform: translate(0);
+      filter: blur(0);
+   }
+ }
+ .arrows{
+   position: absolute;
+   top: 90%;
+   right: 32%;
+   z-index: 100;
+   width: 320px;
+   max-width: 30%;
+   display: flex;
+   gap: 15px;
+   align-items: center;
+ }
+ .arrows button{
+   width: 50px;
+   height: 50px;
+   border-radius: 7px;
+   background-color: #14ff72cb;
+   color: white;
+   border: none;
+   outline: none;
+   font-size: 28px;
+   font-family: monospace;
+   font-weight: 500;
+   cursor: pointer;
+   text-shadow:3px 4px 4px rgb(4, 0, 15) ;
+
+ }
+ .arrows button:hover{
+   background-color: white;
+   color: #14ff72cb;
+ }
+ .carousel .timeRunning{
+   position: absolute;
+   z-index: 99999;
+   width: 0%;
+   height: 1.6px;
+   background-color: #14ff72cb;
+   left: 0;
+   top: 0;
+   animation: runningTIme 6s linear 1 forwards;
+ }
+ @keyframes runningTime{
+   from{
+      width: 0%;
+   }
+   to{
+      width: 100%;
+   }
+ }
+ * {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: Arial, Helvetica, sans-serif;
+}
+a {
+   text-decoration: none;
+}
+header {
+   width: 100%;
+   height: 55px;
+   padding: 16px 88px 4px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   position: relative;
+   box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.685);
+   background-color: #00000089;
+   z-index: 1000;
+}
+header .logo {
+   height: 52px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+header .logo img {
+   height: 44px;
+   padding-bottom: 4px;
+}
+header a {
+   color: #14ff72cb;
+   font-size: 28px;
+   margin-left: 12px;
+   font-weight: 700;
+   text-shadow: 3px 4px 4px rgb(4, 0, 15);
+}
+header nav a {
+   color: white;
+   text-shadow: 3px 4px 4px rgb(4, 0, 15);
+   padding: 8px 0px 4px;
+   font-size: 18px;
+   font-weight: 500;
+   transition: 0.3s;
+   margin-right: 18px;
+}
+a.active {
+   color: #14ff72cb;
+   border-bottom: 2px solid #14ff72cb;
+}
+header .login {
+   color: white;
+   cursor: pointer;
+   font-size: 18px;
+   font-weight: 600;
+   background-color: #14ff72cb;
+   border-radius: 5px;
+   padding: 8px 12px;
+}
+
+/* Carousel */
+.carousel {
+   width: 100vw;
+   height: 100vh;
+   margin-top: -55px;
+   overflow: hidden;
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   position: relative;
+}
+.carousel .list .item {
+   width: 170px;
+   height: 240px;
+   position: absolute;
+   top: 80%;
+   transform: translateY(-70%);
+   left: 70%;
+   border-radius: 17px;
+   box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.3);
+   background-position: 50% 50%;
+   background-size: cover;
+   z-index: 99;
+   transition: 1.5s;
+}
+.carousel .list .item:nth-child(1),
+.carousel .list .item:nth-child(2) {
+   top: 0;
+   left: 0;
+   transform: translate(0, 0);
+   border-radius: 0;
+   width: 100%;
+   height: 100%;
+}
+.carousel .list .item:nth-child(3) {
+   left: 67%;
+}
+.carousel .list .item:nth-child(4) {
+   left: calc(67% + 200px);
+}
+.carousel .list .item:nth-child(5) {
+   left: calc(67% + 400px);
+}
+.carousel .list .item:nth-child(6) {
+   left: calc(67% + 600px);
+}
+.carousel .list .item:nth-child(n+7) {
+   left: calc(67% + 800px);
+}
+
+.list .item .content {
+   position: absolute;
+   top: 50%;
+   left: 100px;
+   width: 440px;
+   transform: translateY(-50%);
+   text-align: left;
+   display: none;
+   color: white;
+}
+.list .item:nth-child(2) .content {
+   display: block;
+}
+.content .title {
+   font-size: 100px;
+   text-transform: uppercase;
+   color: #14ff72cb;
+   font-weight: bold;
+   line-height: 1;
+   text-shadow: 3px 4px 4px rgb(4, 0, 15);
+   opacity: 0;
+   animation: animate 1s ease-in-out 0.3s forwards;
+}
+.content .name {
+   font-size: 100px;
+   text-transform: uppercase;
+   font-weight: bold;
+   line-height: 1;
+   margin-top: 12px;
+   text-shadow: 3px 4px 4px rgb(4, 0, 15);
+   opacity: 0;
+   animation: animate 1s ease-in-out 0.6s forwards;
+}
+.content .des {
+   font-size: 18px;
+   margin: 12px 0px 20px 5px;
+   line-height: 1.6;
+   text-shadow: 3px 4px 4px rgb(4, 0, 15);
+   opacity: 0;
+   animation: animate 1s ease-in-out 0.9s forwards;
+}
+.content .btn {
+   margin: 10px 20px;
+   opacity: 0;
+   animation: animate 1s ease-in-out 1.2s forwards;
+}
+.content .btn button {
+   padding: 10px 20px;
+   border: none;
+   cursor: pointer;
+   font-size: 17px;
+   border: 2px solid white;
+   border-radius: 5px;
+}
+.content .btn button:nth-child(1) {
+   margin-right: 15px;
+}
+.content .btn button:nth-child(2) {
+   background: transparent;
+   color: #14ff72cb;
+   border: 2px solid #14ff72cb;
+   transition: 0.3s;
+}
+.content .btn button:nth-child(1):hover {
+   background-color: #14ff72cb;
+   color: white;
+   border-color: #14ff72cb;
+}
+
+@keyframes animate {
+   from {
+       opacity: 0;
+       transform: translate(0, 100px);
+       filter: blur(33px);
+   }
+   to {
+       opacity: 1;
+       transform: translate(0);
+       filter: blur(0);
+   }
+}
+
+.arrows {
+   position: absolute;
+   top: 90%;
+   right: 32%;
+   z-index: 100;
+   width: 320px;
+   max-width: 30%;
+   display: flex;
+   gap: 15px;
+   align-items: center;
+}
+.arrows button {
+   width: 50px;
+   height: 50px;
+   border-radius: 7px;
+   background-color: #14ff72cb;
+   color: white;
+   border: none;
+   outline: none;
+   font-size: 28px;
+   font-family: monospace;
+   font-weight: 500;
+   cursor: pointer;
+   text-shadow: 3px 4px 4px rgb(4, 0, 15);
+}
+.arrows button:hover {
+   background-color: white;
+   color: #14ff72cb;
+}
+
+.carousel .timeRunning {
+   position: absolute;
+   z-index: 99999;
+   width: 0%;
+   height: 1.6px;
+   background-color: #14ff72cb;
+   left: 0;
+   top: 0;
+   animation: runningTime 6s linear 1 forwards;
+}
+
+@keyframes runningTime {
+   from {
+       width: 0%;
+   }
+   to {
+       width: 100%;
+   }
+}
+
+
+
+
+
+
+/* Add this at the end of your existing CSS */
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    header {
+        padding: 16px 40px 4px;
+    }
+
+    .carousel .list .item .content {
+        left: 50px;
+        width: 400px;
+    }
+
+    .content .title,
+    .content .name {
+        font-size: 80px;
+    }
+
+    .content .des {
+        font-size: 16px;
+    }
+
+    .arrows {
+        right: 25%;
+    }
+}
+
+@media (max-width: 992px) {
+    header {
+        padding: 16px 20px 4px;
+    }
+
+    .carousel .list .item .content {
+        left: 30px;
+        width: 350px;
+    }
+
+    .content .title,
+    .content .name {
+        font-size: 60px;
+    }
+
+    .content .des {
+        font-size: 14px;
+    }
+
+    .arrows {
+        right: 20%;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 16px 10px 4px;
+    }
+
+    .carousel .list .item .content {
+        left: 20px;
+        width: 300px;
+    }
+
+    .content .title,
+    .content .name {
+        font-size: 50px;
+    }
+
+    .content .des {
+        font-size: 12px;
+    }
+
+    .arrows {
+        right: 15%;
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        padding: 16px 5px 4px;
+    }
+
+    .carousel .list .item .content {
+        left: 10px;
+        width: 250px;
+    }
+
+    .content .title,
+    .content .name {
+        font-size: 40px;
+    }
+
+    .content .des {
+        font-size: 10px;
+    }
+
+    .arrows {
+        right: 10%;
+    }
+
+    .arrows button {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 16px 5px 4px;
+    }
+
+    .carousel .list .item .content {
+        left: 5px;
+        width: 200px;
+    }
+
+    .content .title,
+    .content .name {
+        font-size: 30px;
+    }
+
+    .content .des {
+        font-size: 8px;
+    }
+
+    .arrows {
+        right: 5%;
+    }
+
+    .arrows button {
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+    }
+}
+#addImageBtn {
+    background-color: transparent; /* Remove background color */
+    border: none; /* Remove border */
+    padding: 0; /* Adjust padding if needed */
+    cursor: pointer; /* Ensure it looks clickable */
+    color: white; /* Match the text color with other nav links */
+    font-size: 18px; /* Match the font size with other nav links */
+    font-weight: 500; /* Match the font weight with other nav links */
+    text-shadow: 3px 4px 4px rgb(4, 0, 15); /* Match the text shadow */
+}
+
+#addImageBtn:hover {
+    color: #14ff72cb; /* Add hover effect to match other nav links */
+}

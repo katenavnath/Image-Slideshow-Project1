@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Your existing CSS styles */
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="logo">
+            <img src="./image/logo.png" alt="">
+            <a href="">Nature</a>
+        </div>
+        <nav>
+            <a href="" class="actives">Image Slideshow</a>
+            <input type="file" id="imageUpload" accept="image/*" style="display: none;" multiple>
+            <button id="addImageBtn" ><a href="" class="actives">Add Image</a></button>
+        </nav>
+    </header>
+
+    <!-- Carousel -->
+    <div class="carousel">
+        <div class="list">
+            <!-- Initial carousel items -->
+            <div class="item" style="background-image: url('img/rabbit2.jpg');">
+                <div class="content">
+                    <div class="title">Slider</div>
+                    <div class="name">Rabbit</div>
+                    <div class="des">Please Add More Images</div>
+                    <div class="btn">
+                        <button>Like</button>
+                        <button>Add Favorate</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item" style="background-image: url('img/rabbit2.jpg');">
+                <div class="content">
+                    <div class="title">Slider</div>
+                    <div class="name">Rabbit</div>
+                    <div class="des">Please Add More Images</div>
+                    <div class="btn">
+                        <button>Like</button>
+                        <button>Add Favorate</button>
+                    </div>
+                </div>
+            </div>
+            <!-- More items can be added here -->
+        </div>
+
+        <!-- Next and Previous Buttons -->
+        <div class="arrows">
+            <button class="prev"><</button>
+            <button class="next">></button>
+        </div>
+
+        <!-- Time Running -->
+        <div class="timeRunning"></div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
