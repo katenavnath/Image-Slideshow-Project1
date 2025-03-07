@@ -5,22 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Slider</title>
     <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Your existing CSS styles */
-    </style>
 </head>
 <body>
     <!-- Navbar -->
     <header>
         <div class="logo">
             <img src="./image/logo.png" alt="">
-            <a href="">Nature</a>
+            <a href="#">Nature</a>
         </div>
         <nav>
-            <a href="" class="actives">Image Slideshow</a>
+            <button id="imag"><a href="#" class="actives">Image Slideshow</a></button>
             <input type="file" id="imageUpload" accept="image/*" style="display: none;" multiple>
-            <button id="addImageBtn" ><a href="" class="actives">Add Image</a></button>
+            <button id="addImageBtn"><a href="" class="actives">Add Image</a></button>
+            <!-- Add Favorite Icon -->
+            <i class="fas fa-plus add-favorite-icon" onclick="toggleFavorites()"></i>
+            <i class="fa-solid fa-thumbs-up" onclick="showOwnerImage()"></i>
         </nav>
     </header>
 
@@ -28,29 +29,14 @@
     <div class="carousel">
         <div class="list">
             <!-- Initial carousel items -->
-            <div class="item" id="imgs" style="background-image: url('image.jpg');">
-<!--                 <div class="content">
-                    <div class="title">Slider</div>
-                    <div class="name">Rabbit</div>
-                    <div class="des">Please Add More Images</div>
-                    <div class="btn">
-                        <button>Like</button>
-                        <button>Add Favorate</button>
-                    </div>
-                </div> -->
-            </div>
-<!--             <div class="item" style="background-image: url('img/rabbit2.jpg');">
+            <div class="item" style="background-image: url('');">
                 <div class="content">
-                    <div class="title">Slider</div>
-                    <div class="name">Rabbit</div>
-                    <div class="des">Please Add More Images</div>
                     <div class="btn">
                         <button>Like</button>
-                        <button>Add Favorate</button>
+                        <button onclick="addToFavorites()">Add Favorite</button>
                     </div>
                 </div>
-            </div> -->
-            <!-- More items can be added here -->
+            </div>
         </div>
 
         <!-- Next and Previous Buttons -->
@@ -62,6 +48,21 @@
         <!-- Time Running -->
         <div class="timeRunning"></div>
     </div>
-<script src="script.js"></script>
+
+    <!-- Favorites Container -->
+    <div class="favorites-container">
+        <h2>Favorites</h2>
+        <div class="favorites-grid">
+            <!-- Favorited images will appear here -->
+        </div>
+    </div>
+
+    <!-- Full Screen Image -->
+    <div class="full-screen-image" id="fullScreenImage">
+        <span class="close-btn" onclick="closeFullScreenImage()">×</span>
+        <img src="./img/A25team logo (1)_removed_page-0001.jpg" alt="Owner Image">
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
