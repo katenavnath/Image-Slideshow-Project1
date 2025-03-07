@@ -1,633 +1,484 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-a{
-    text-decoration: none;
-}
-header{
-    width: 100%;
-    height: 55px;
-    padding: 16px 88px 4px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.685);
-    background-color: #00000089;
-    z-index: 1000;
-}
-header .logo{
-    height: 52px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-header .logo img{
-    height: 44px;
-    padding-bottom: 4px;
-}
-header a{
-    color: #14ff72cb;
-    font-size: 28px;
-    margin-left: 12px;
-    font-weight: 700;
-    text-shadow: 3px 4px 4px rgb(4, 0, 15);
-}
-header nav a{
-    color: white;
-    text-shadow: 3px 4px 4px rgb(4, 0, 15);
-    padding: 8px 0px 4px;
-    font-size: 18px;
-    font-weight: 500;
-    transition: 0.3s;
-    margin-right: 18px;
-}
-a.actives{
-    color: #14ff72cb;
-    border-bottom: 2px solid #14ff72cb;
-}
-header .login{
-    color: white;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: 600;
-    background-color: #14ff72cb;
-    border-radius: 5px;
-    padding: 8px 12px;
-}
-  /* carouse;  */
- .carousel{
-        width: 100vw;
-        height: 100vh;
-        margin-top: -55px;
-        overflow: hidden;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        position: relative;
- }
- .carousel .list .item{
-    width: 170px;
-    height: 240px;
-    position: absolute;
-    top: 80%;
-    transform: translateY(-70%);
-    left: 70%;
-    border-radius: 17px;
-    box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.3);
-    background-position: 50% 50%;
-    background-size: cover;
-    z-index: 99;
-    transition: 1.5s;
- }
- .carousel .list .item:nth-child(1),
- .carousel .list .item:nth-child(2){
-    top: 0;
-    left: 0;
-    transform: translate(0 0);
-    border-radius: 0;
-    width: 100%;
-    height: 100%;
- }
- .carousel .list:nth-child(3){
-    left: 67%;
- }
- .carousel .list:nth-child(4){
-    left: calc(67% + 200px);
- }
- .carousel .list:nth-child(5){
-    left: calc(67% + 400px);
- }
- .carousel .list:nth-child(6){
-    left: calc(67% + 600px);
- }
- .carousel .list:nth-child(n+7){
-    left: calc(67% + 800px);
- }
- .list .item .content{
-    position: absolute;
-    top: 50%;
-    left:100px;
-    width: 440px;
-    transform: translateY(-50%);
-    text-align: left;
-    display: none;
-    color: white;
- }
- .list .item:nth-child(2) .content{
-    display: block;
- }
- .content .title{
-    font-size: 100px;
-    text-transform: uppercase;
-   color: #14ff72cb;
-   font-weight: bold;
-   line-height: 1;
-   text-shadow: 3px 4px 4px rgb(4, 0, 15);
-   opacity: 0;
-   animation: animate 1s ease-in-out 0.3s forwards;
- }
- .content .name{
-   font-size: 100px;
-   text-transform: uppercase;
-   font-weight: bold;
-   line-height: 1;
-   margin-top:12px;
-   text-shadow: 3px 4px 4px rgb(4, 0, 15);
-   opacity: 0;
-   animation: animate 1s ease-in-out 0.6s forwards;
- }
- .content .des{
-   font-size: 18px;
-   margin: 12px 0px 20px 5px;
-   line-height: 1.6;
-   text-shadow: 3px 4px 4px rgb(4, 0, 15);
-   opacity: 0;
-   animation: animate 1s ease-in-out 0.9s forwards;
- }
- .content .btn{
-   margin: 10px 20px;
-   opacity: 0;
-   animation: animate 1s ease-in-out 1.2s forwards;
- }
- .content .btn button{
-   padding: 10px 20px;
-   border: none;
-   cursor: pointer;
-   font-size: 17px;
-   border: 2px solid white;
-   border-radius: 5px;
- }
- .content .btn button:nth-child(1){
-   margin-right: 15px;
- }
- .content .btn button:nth-child(2){
-   background: transparent;
-   color: #14ff72cb;
-   border: 2px solid #14ff72cb;
-   transition: 0.3s;
- }
- .content .btn button:nth-child(1):hover{
-   background-color: #14ff72cb;
-   color: white;
-   border-color: #14ff72cb;
- }
- @keyframes animate{
-   from{
-      opacity: 0;
-      transform: translate(0,100px);
-      filter: blur(33px);
-   }
-   to{
-      opacity: 1;
-      transform: translate(0);
-      filter: blur(0);
-   }
- }
- .arrows{
-   position: absolute;
-   top: 90%;
-   right: 32%;
-   z-index: 100;
-   width: 320px;
-   max-width: 30%;
-   display: flex;
-   gap: 15px;
-   align-items: center;
- }
- .arrows button{
-   width: 50px;
-   height: 50px;
-   border-radius: 7px;
-   background-color: #14ff72cb;
-   color: white;
-   border: none;
-   outline: none;
-   font-size: 28px;
-   font-family: monospace;
-   font-weight: 500;
-   cursor: pointer;
-   text-shadow:3px 4px 4px rgb(4, 0, 15) ;
 
- }
- .arrows button:hover{
-   background-color: white;
-   color: #14ff72cb;
- }
- .carousel .timeRunning{
-   position: absolute;
-   z-index: 99999;
-   width: 0%;
-   height: 1.6px;
-   background-color: #14ff72cb;
-   left: 0;
-   top: 0;
-   animation: runningTIme 6s linear 1 forwards;
- }
- @keyframes runningTime{
-   from{
-      width: 0%;
-   }
-   to{
-      width: 100%;
-   }
- }
- * {
-   padding: 0;
-   margin: 0;
-   box-sizing: border-box;
-   font-family: Arial, Helvetica, sans-serif;
-}
-a {
-   text-decoration: none;
-}
-header {
-   width: 100%;
-   height: 55px;
-   padding: 16px 88px 4px;
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   position: relative;
-   box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.685);
-   background-color: #00000089;
-   z-index: 1000;
-}
-header .logo {
-   height: 52px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-}
-header .logo img {
-   height: 44px;
-   padding-bottom: 4px;
-}
-header a {
-   color: #14ff72cb;
-   font-size: 28px;
-   margin-left: 12px;
-   font-weight: 700;
-   text-shadow: 3px 4px 4px rgb(4, 0, 15);
-}
-header nav a {
-   color: white;
-   text-shadow: 3px 4px 4px rgb(4, 0, 15);
-   padding: 8px 0px 4px;
-   font-size: 18px;
-   font-weight: 500;
-   transition: 0.3s;
-   margin-right: 18px;
-}
-a.active {
-   color: #14ff72cb;
-   border-bottom: 2px solid #14ff72cb;
-}
-header .login {
-   color: white;
-   cursor: pointer;
-   font-size: 18px;
-   font-weight: 600;
-   background-color: #14ff72cb;
-   border-radius: 5px;
-   padding: 8px 12px;
-}
+        /* Your existing CSS styles */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        a {
+            text-decoration: none;
+        }
+        header {
+            width: 100%;
+            height: 55px;
+            padding: 16px 88px 4px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.685);
+            background-color: #00000089;
+            z-index: 1000;
+        }
+        header .logo {
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        header .logo img {
+            height: 44px;
+            padding-bottom: 4px;
+        }
+        header a {
+            color: #14ff72cb;
+            font-size: 28px;
+            margin-left: 12px;
+            font-weight: 700;
+            text-shadow: 3px 4px 4px rgb(4, 0, 15);
+        }
+        header nav a {
+            color: white;
+            text-shadow: 3px 4px 4px rgb(4, 0, 15);
+            padding: 8px 0px 4px;
+            font-size: 18px;
+            font-weight: 500;
+            transition: 0.3s;
+            margin-right: 18px;
+        }
+        a.actives {
+            color: #14ff72cb;
+            border-bottom: 2px solid #14ff72cb;
+        }
+        header .login {
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            background-color: #14ff72cb;
+            border-radius: 5px;
+            padding: 8px 12px;
+        }
 
-/* Carousel */
-.carousel {
-   width: 100vw;
-   height: 100vh;
-   margin-top: -55px;
-   overflow: hidden;
-   background-position: center;
-   background-size: cover;
-   background-repeat: no-repeat;
-   position: relative;
-}
-.carousel .list .item {
-   width: 170px;
-   height: 240px;
-   position: absolute;
-   top: 80%;
-   transform: translateY(-70%);
-   left: 70%;
-   border-radius: 17px;
-   box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.3);
-   background-position: 50% 50%;
-   background-size: cover;
-   z-index: 99;
-   transition: 1.5s;
-}
-.carousel .list .item:nth-child(1),
-.carousel .list .item:nth-child(2) {
-   top: 0;
-   left: 0;
-   transform: translate(0, 0);
-   border-radius: 0;
-   width: 100%;
-   height: 100%;
-}
-.carousel .list .item:nth-child(3) {
-   left: 67%;
-}
-.carousel .list .item:nth-child(4) {
-   left: calc(67% + 200px);
-}
-.carousel .list .item:nth-child(5) {
-   left: calc(67% + 400px);
-}
-.carousel .list .item:nth-child(6) {
-   left: calc(67% + 600px);
-}
-.carousel .list .item:nth-child(n+7) {
-   left: calc(67% + 800px);
-}
+        /* Carousel */
+        .carousel {
+            width: 100vw;
+            height: 100vh;
+            margin-top: -55px;
+            overflow: hidden;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        .carousel .list .item {
+            width: 170px;
+            height: 240px;
+            position: absolute;
+            top: 80%;
+            transform: translateY(-70%);
+            left: 70%;
+            border-radius: 17px;
+            box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.3);
+            background-position: 50% 50%;
+            background-size: cover;
+            z-index: 99;
+            transition: 1.5s;
+        }
+        .carousel .list .item:nth-child(1),
+        .carousel .list .item:nth-child(2) {
+            top: 0;
+            left: 0;
+            transform: translate(0, 0);
+            border-radius: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .carousel .list .item:nth-child(3) {
+            left: 67%;
+        }
+        .carousel .list .item:nth-child(4) {
+            left: calc(67% + 200px);
+        }
+        .carousel .list .item:nth-child(5) {
+            left: calc(67% + 400px);
+        }
+        .carousel .list .item:nth-child(6) {
+            left: calc(67% + 600px);
+        }
+        .carousel .list .item:nth-child(n+7) {
+            left: calc(67% + 800px);
+        }
 
-.list .item .content {
-   position: absolute;
-   top: 50%;
-   left: 100px;
-   width: 440px;
-   transform: translateY(-50%);
-   text-align: left;
-   display: none;
-   color: white;
-}
-.list .item:nth-child(2) .content {
-   display: block;
-}
-.content .title {
-   font-size: 100px;
-   text-transform: uppercase;
-   color: #14ff72cb;
-   font-weight: bold;
-   line-height: 1;
-   text-shadow: 3px 4px 4px rgb(4, 0, 15);
-   opacity: 0;
-   animation: animate 1s ease-in-out 0.3s forwards;
-}
-.content .name {
-   font-size: 100px;
-   text-transform: uppercase;
-   font-weight: bold;
-   line-height: 1;
-   margin-top: 12px;
-   text-shadow: 3px 4px 4px rgb(4, 0, 15);
-   opacity: 0;
-   animation: animate 1s ease-in-out 0.6s forwards;
-}
-.content .des {
-   font-size: 18px;
-   margin: 12px 0px 20px 5px;
-   line-height: 1.6;
-   text-shadow: 3px 4px 4px rgb(4, 0, 15);
-   opacity: 0;
-   animation: animate 1s ease-in-out 0.9s forwards;
-}
-.content .btn {
-   margin: 10px 20px;
-   opacity: 0;
-   animation: animate 1s ease-in-out 1.2s forwards;
-}
-.content .btn button {
-   padding: 10px 20px;
-   border: none;
-   cursor: pointer;
-   font-size: 17px;
-   border: 2px solid white;
-   border-radius: 5px;
-}
-.content .btn button:nth-child(1) {
-   margin-right: 15px;
-}
-.content .btn button:nth-child(2) {
-   background: transparent;
-   color: #14ff72cb;
-   border: 2px solid #14ff72cb;
-   transition: 0.3s;
-}
-.content .btn button:nth-child(1):hover {
-   background-color: #14ff72cb;
-   color: white;
-   border-color: #14ff72cb;
-}
+        .list .item .content {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            width: auto;
+            text-align: left;
+            display: none;
+            color: white;
+        }
+        .list .item:nth-child(2) .content {
+            display: block;
+        }
+        .content .btn {
+            display: flex;
+            gap: 10px;
+        }
+        .content .btn button {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 17px;
+            border: 2px solid white;
+            border-radius: 5px;
+        }
+        .content .btn button:nth-child(1) {
+            margin-right: 15px;
+        }
+        .content .btn button:nth-child(2) {
+            background: transparent;
+            color: #14ff72cb;
+            border: 2px solid #14ff72cb;
+            transition: 0.3s;
+        }
+        .content .btn button:nth-child(1):hover {
+            background-color: #14ff72cb;
+            color: white;
+            border-color: #14ff72cb;
+        }
 
-@keyframes animate {
-   from {
-       opacity: 0;
-       transform: translate(0, 100px);
-       filter: blur(33px);
-   }
-   to {
-       opacity: 1;
-       transform: translate(0);
-       filter: blur(0);
-   }
-}
+        @keyframes animate {
+            from {
+                opacity: 0;
+                transform: translate(0, 100px);
+                filter: blur(33px);
+            }
+            to {
+                opacity: 1;
+                transform: translate(0);
+                filter: blur(0);
+            }
+        }
 
-.arrows {
-   position: absolute;
-   top: 90%;
-   right: 32%;
-   z-index: 100;
-   width: 320px;
-   max-width: 30%;
-   display: flex;
-   gap: 15px;
-   align-items: center;
-}
-.arrows button {
-   width: 50px;
-   height: 50px;
-   border-radius: 7px;
-   background-color: #14ff72cb;
-   color: white;
-   border: none;
-   outline: none;
-   font-size: 28px;
-   font-family: monospace;
-   font-weight: 500;
-   cursor: pointer;
-   text-shadow: 3px 4px 4px rgb(4, 0, 15);
-}
-.arrows button:hover {
-   background-color: white;
-   color: #14ff72cb;
-}
+        .arrows {
+            position: absolute;
+            top: 90%;
+            right: 32%;
+            z-index: 100;
+            width: 320px;
+            max-width: 30%;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .arrows button {
+            width: 50px;
+            height: 50px;
+            border-radius: 7px;
+            background-color: #14ff72cb;
+            color: white;
+            border: none;
+            outline: none;
+            font-size: 28px;
+            font-family: monospace;
+            font-weight: 500;
+            cursor: pointer;
+            text-shadow: 3px 4px 4px rgb(4, 0, 15);
+        }
+        .arrows button:hover {
+            background-color: white;
+            color: #14ff72cb;
+        }
 
-.carousel .timeRunning {
-   position: absolute;
-   z-index: 99999;
-   width: 0%;
-   height: 1.6px;
-   background-color: #14ff72cb;
-   left: 0;
-   top: 0;
-   animation: runningTime 6s linear 1 forwards;
-}
+        .carousel .timeRunning {
+            position: absolute;
+            z-index: 99999;
+            width: 0%;
+            height: 1.6px;
+            background-color: #14ff72cb;
+            left: 0;
+            top: 0;
+            animation: runningTime 6s linear 1 forwards;
+        }
 
-@keyframes runningTime {
-   from {
-       width: 0%;
-   }
-   to {
-       width: 100%;
-   }
-}
+        @keyframes runningTime {
+            from {
+                width: 0%;
+            }
+            to {
+                width: 100%;
+            }
+        }
 
+        /* Favorites Container */
+        .favorites-container {
+            display: none;
+            padding: 20px;
+            background-color: #00000089;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .favorites-container h2 {
+            color: #14ff72cb;
+            margin-bottom: 20px;
+        }
+        .favorites-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        .favorites-grid .favorite-item {
+            position: relative;
+            width: 100%;
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+        }
+        .favorite-item .delete-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: rgba(255, 0, 0, 0.7);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+        .favorite-item .delete-btn:hover {
+            background-color: rgba(255, 0, 0, 1);
+        }
 
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            header {
+                padding: 16px 40px 4px;
+            }
 
+            .carousel .list .item .content {
+                left: 50px;
+                width: 400px;
+            }
 
+            .content .title,
+            .content .name {
+                font-size: 80px;
+            }
 
+            .content .des {
+                font-size: 16px;
+            }
 
-/* Add this at the end of your existing CSS */
+            .arrows {
+                right: 25%;
+            }
+        }
 
-/* Responsive Styles */
-@media (max-width: 1200px) {
-    header {
-        padding: 16px 40px 4px;
-    }
+        @media (max-width: 992px) {
+            header {
+                padding: 16px 20px 4px;
+            }
 
-    .carousel .list .item .content {
-        left: 50px;
-        width: 400px;
-    }
+            .carousel .list .item .content {
+                left: 30px;
+                width: 350px;
+            }
 
-    .content .title,
-    .content .name {
-        font-size: 80px;
-    }
+            .content .title,
+            .content .name {
+                font-size: 60px;
+            }
 
-    .content .des {
-        font-size: 16px;
-    }
+            .content .des {
+                font-size: 14px;
+            }
 
-    .arrows {
-        right: 25%;
-    }
-}
+            .arrows {
+                right: 20%;
+            }
+        }
 
-@media (max-width: 992px) {
-    header {
-        padding: 16px 20px 4px;
-    }
+        @media (max-width: 768px) {
+            header {
+                padding: 16px 10px 4px;
+            }
 
-    .carousel .list .item .content {
-        left: 30px;
-        width: 350px;
-    }
+            .carousel .list .item .content {
+                left: 20px;
+                width: 300px;
+            }
 
-    .content .title,
-    .content .name {
-        font-size: 60px;
-    }
+            .content .title,
+            .content .name {
+                font-size: 50px;
+            }
 
-    .content .des {
-        font-size: 14px;
-    }
+            .content .des {
+                font-size: 12px;
+            }
 
-    .arrows {
-        right: 20%;
-    }
-}
+            .arrows {
+                right: 15%;
+            }
+        }
 
-@media (max-width: 768px) {
-    header {
-        padding: 16px 10px 4px;
-    }
+        @media (max-width: 576px) {
+            header {
+                padding: 16px 5px 4px;
+            }
 
-    .carousel .list .item .content {
-        left: 20px;
-        width: 300px;
-    }
+            .carousel .list .item .content {
+                left: 10px;
+                width: 250px;
+            }
 
-    .content .title,
-    .content .name {
-        font-size: 50px;
-    }
+            .content .title,
+            .content .name {
+                font-size: 40px;
+            }
 
-    .content .des {
-        font-size: 12px;
-    }
+            .content .des {
+                font-size: 10px;
+            }
 
-    .arrows {
-        right: 15%;
-    }
-}
+            .arrows {
+                right: 10%;
+            }
 
-@media (max-width: 576px) {
-    header {
-        padding: 16px 5px 4px;
-    }
+            .arrows button {
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+            }
+        }
 
-    .carousel .list .item .content {
-        left: 10px;
-        width: 250px;
-    }
+        @media (max-width: 480px) {
+            header {
+                padding: 16px 5px 4px;
+            }
 
-    .content .title,
-    .content .name {
-        font-size: 40px;
-    }
+            .carousel .list .item .content {
+                left: 5px;
+                width: 200px;
+            }
 
-    .content .des {
-        font-size: 10px;
-    }
+            .content .title,
+            .content .name {
+                font-size: 30px;
+            }
 
-    .arrows {
-        right: 10%;
-    }
+            .content .des {
+                font-size: 8px;
+            }
 
-    .arrows button {
-        width: 40px;
-        height: 40px;
-        font-size: 24px;
-    }
-}
+            .arrows {
+                right: 5%;
+            }
 
-@media (max-width: 480px) {
-    header {
-        padding: 16px 5px 4px;
-    }
+            .arrows button {
+                width: 30px;
+                height: 30px;
+                font-size: 20px;
+            }
+        }
 
-    .carousel .list .item .content {
-        left: 5px;
-        width: 200px;
-    }
+        #addImageBtn {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            text-shadow: 3px 4px 4px rgb(4, 0, 15);
+            padding: 5px;
+            border: 3px solid gray;
+        }
+        #imag{
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            text-shadow: 3px 4px 4px rgb(4, 0, 15);
+            padding: 5px;
+            border: 3px solid gray;
+        }
 
-    .content .title,
-    .content .name {
-        font-size: 30px;
-    }
+        #addImageBtn:hover {
+            color: #14ff72cb;
+        }
 
-    .content .des {
-        font-size: 8px;
-    }
+        /* Heart Icon Styles */
+        .heart-icon {
+            color: white;
+            font-size: 24px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .heart-icon:hover {
+            color: #ff1493; /* Change to a pink color on hover */
+        }
 
-    .arrows {
-        right: 5%;
-    }
+        /* Add Favorite Icon Styles */
+        .add-favorite-icon {
+            color: #14ff72cb;
+            font-size: 24px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .add-favorite-icon:hover {
+            color: #ffffffcb; /* Change to a green color on hover */
+        }
+        .fa-thumbs-up {
+            font-size: 27px; /* Increased size */
+            color:#14ff72cb ;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: 0.3s;
+        }
+        .fa-thumbs-up:hover {
+            color: #ffffffcb; /* Change color on hover */
+        }
 
-    .arrows button {
-        width: 30px;
-        height: 30px;
-        font-size: 20px;
-    }
-}
-#addImageBtn {
-    background-color: transparent; /* Remove background color */
-    border: none; /* Remove border */
-    padding: 0; /* Adjust padding if needed */
-    cursor: pointer; /* Ensure it looks clickable */
-    color: white; /* Match the text color with other nav links */
-    font-size: 18px; /* Match the font size with other nav links */
-    font-weight: 500; /* Match the font weight with other nav links */
-    text-shadow: 3px 4px 4px rgb(4, 0, 15); /* Match the text shadow */
-}
-
-#addImageBtn:hover {
-    color: #14ff72cb; /* Add hover effect to match other nav links */
-}
+        /* Full Screen Image Styles */
+        .full-screen-image {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+        .full-screen-image img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
